@@ -101,36 +101,6 @@
     <Content Include="admin\channel\channel_list.aspx" />
     <Content Include="admin\dialog\dialog_attach.aspx" />
     <Content Include="admin\dialog\dialog_print.aspx" />
-    <Content Include="admin\forum\admin\board_edit.aspx" />
-    <Content Include="admin\forum\admin\board_list.aspx" />
-    <Content Include="admin\forum\admin\post_edit.aspx" />
-    <Content Include="admin\forum\admin\post_list.aspx" />
-    <Content Include="admin\forum\bin\DTcms.Web.Plugin.Forum.dll" />
-    <Content Include="admin\forum\DTcms.Web.Plugin.Forum.csproj" />
-    <Content Include="admin\forum\DTcms.Web.Plugin.Forum.csproj.user" />
-    <Content Include="admin\forum\images\digest.gif" />
-    <Content Include="admin\forum\images\folder_common.gif" />
-    <Content Include="admin\forum\images\folder_new.gif" />
-    <Content Include="admin\forum\images\forum-board-ico.png" />
-    <Content Include="admin\forum\images\forum.css" />
-    <Content Include="admin\forum\images\forum.gif" />
-    <Content Include="admin\forum\images\forum_new.gif" />
-    <Content Include="admin\forum\images\hot.gif" />
-    <Content Include="admin\forum\images\pin.gif" />
-    <Content Include="admin\forum\images\pn_post.png" />
-    <Content Include="admin\forum\images\pn_reply.png" />
-    <Content Include="admin\forum\image\dnt.css" />
-    <Content Include="admin\forum\image\float.css" />
-    <Content Include="admin\forum\image\forum.gif" />
-    <Content Include="admin\forum\image\forumhot.css" />
-    <Content Include="admin\forum\image\forum_new.gif" />
-    <Content Include="admin\forum\image\hotbg.png" />
-    <Content Include="admin\forum\image\sortnum.png" />
-    <Content Include="admin\forum\image\titlebg.png" />
-    <Content Include="admin\forum\obj\Debug\DTcms.Web.Plugin.Forum.csproj.FileListAbsolute.txt" />
-    <Content Include="admin\forum\obj\Debug\DTcms.Web.Plugin.Forum.dll" />
-    <Content Include="admin\forum\obj\Debug\DTcms.Web.Plugin.Forum.pdb" />
-    <Content Include="admin\forum\obj\Debug\Lcms.Web.Plugin.Forum.csproj.FileListAbsolute.txt" />
     <Content Include="admin\Function\category_edit.aspx" />
     <Content Include="admin\Function\category_list.aspx" />
     <Content Include="admin\ie6update.html" />
@@ -1529,45 +1499,6 @@
     <Compile Include="admin\dialog\dialog_print.aspx.designer.cs">
       <DependentUpon>dialog_print.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\forum\admin\board_edit.aspx.cs">
-      <DependentUpon>board_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\admin\board_edit.aspx.designer.cs">
-      <DependentUpon>board_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\admin\board_list.aspx.cs">
-      <DependentUpon>board_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\admin\board_list.aspx.designer.cs">
-      <DependentUpon>board_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\admin\post_edit.aspx.cs">
-      <DependentUpon>post_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\admin\post_edit.aspx.designer.cs">
-      <DependentUpon>post_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\admin\post_list.aspx.cs">
-      <DependentUpon>post_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\admin\post_list.aspx.designer.cs">
-      <DependentUpon>post_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\ajax.ashx.cs">
-      <DependentUpon>ajax.ashx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\forum\BLL\board.cs" />
-    <Compile Include="admin\forum\BLL\posts.cs" />
-    <Compile Include="admin\forum\DAL\board.cs" />
-    <Compile Include="admin\forum\DAL\posts.cs" />
-    <Compile Include="admin\forum\Model\board.cs" />
-    <Compile Include="admin\forum\Model\posts.cs" />
-    <Compile Include="admin\forum\page\board.cs" />
-    <Compile Include="admin\forum\page\post_list.cs" />
-    <Compile Include="admin\forum\page\post_pub.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\forum\page\post_show.cs" />
     <Compile Include="admin\Function\category_edit.aspx.cs">
       <DependentUpon>category_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1828,8 +1759,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="admin\File\" />
-    <Folder Include="admin\forum\obj\Debug\TempPE\" />
-    <Folder Include="admin\forum\Properties\" />
     <Folder Include="App_Data\" />
     <Folder Include="Files\zyupload\" />
     <Folder Include="log\" />
@@ -1880,11 +1809,6 @@
     <Content Include="Dll\AspNetPager.dll.refresh" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="admin\forum\ajax.ashx" />
-    <Content Include="admin\forum\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="admin\forum\obj\Debug\DTcms.Web.Plugin.Forum.csprojResolveAssemblyReference.cache" />
-    <Content Include="admin\forum\obj\Debug\Lcms.Web.Plugin.Forum.csprojResolveAssemblyReference.cache" />
-    <Content Include="admin\forum\plugin.config" />
     <None Include="bin\Web.dll.config" />
     <Content Include="logs\2017-02-14.log" />
     <Content Include="logs\2017-02-16.log" />
