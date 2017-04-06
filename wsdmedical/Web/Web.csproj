@@ -120,18 +120,12 @@
     <Content Include="admin\manager\role_edit.aspx" />
     <Content Include="admin\manager\role_list.aspx" />
     <Content Include="admin\manager\xmlconfig.aspx" />
-    <Content Include="admin\order\order_edit.aspx" />
-    <Content Include="admin\order\order_list.aspx" />
-    <Content Include="admin\order\user_edit.aspx" />
-    <Content Include="admin\order\user_list.aspx" />
     <Content Include="admin\plugins\link_edit.aspx" />
     <Content Include="admin\plugins\link_index.aspx" />
     <Content Include="admin\plugins\reply_edit.aspx" />
     <Content Include="admin\plugins\reply_list.aspx" />
     <Content Include="admin\plugins\slidelink_edit.aspx" />
     <Content Include="admin\plugins\slidelink_index.aspx" />
-    <Content Include="admin\plugins\type_index.aspx" />
-    <Content Include="admin\plugins\type_edit.aspx" />
     <Content Include="admin\preview\FlexPaper\css\flexpaper.css" />
     <Content Include="admin\preview\FlexPaper\FlexPaperViewer.swf" />
     <Content Include="admin\preview\FlexPaper\js\expressInstall.swf" />
@@ -625,27 +619,6 @@
     <Content Include="ueditor\ueditor.parse.js" />
     <Content Include="ueditor\ueditor.parse.min.js" />
     <Content Include="Error\error.html" />
-    <Content Include="Files\09de8944-54ae-44b1-af09-7d60a2bd4d19.jpg" />
-    <Content Include="Files\0b75e627-c705-4de2-b441-30508a5efe85.jpg" />
-    <Content Include="Files\1816f24f-bffd-4c1d-8a6f-6ec9c0d932ed.png" />
-    <Content Include="Files\1_20161203123415.jpg" />
-    <Content Include="Files\1_20161203123425.jpg" />
-    <Content Include="Files\1_20161203124637.jpg" />
-    <Content Include="Files\1_20161203125158.jpg" />
-    <Content Include="Files\1_20161203125331.jpg" />
-    <Content Include="Files\1_20161203125439.jpg" />
-    <Content Include="Files\27a45c71-7fa6-473a-ab06-91ce83ba0c18.jpg" />
-    <Content Include="Files\2_20161203123409.png" />
-    <Content Include="Files\2_20161203123844.png" />
-    <Content Include="Files\2_20161203124513.png" />
-    <Content Include="Files\2_20161203124801.png" />
-    <Content Include="Files\37b28118-d68b-4124-a873-282f9c3c3cbe.png" />
-    <Content Include="Files\4cf0db87-c094-4128-804e-82fb59b0e8cf.jpg" />
-    <Content Include="Files\7a9128b2-4992-46e7-a6e7-1a39e5c90cab.png" />
-    <Content Include="Files\a1f3ed86-da07-483b-86df-6840eb4ae3e8.png" />
-    <Content Include="Files\abe39c20-ab9c-4798-878d-3d56a3a0dffb.png" />
-    <Content Include="Files\ade8c92a-19b5-41e6-9563-7b8a02478a1a.jpg" />
-    <Content Include="Files\新建文本文档_20161203124202.txt" />
     <Content Include="images\17.gif" />
     <Content Include="images\3.gif" />
     <Content Include="images\a1_1.gif" />
@@ -1576,34 +1549,6 @@
     <Compile Include="admin\manager\xmlconfig.aspx.designer.cs">
       <DependentUpon>xmlconfig.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\order\order_edit.aspx.cs">
-      <DependentUpon>order_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\order\order_edit.aspx.designer.cs">
-      <DependentUpon>order_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\order\order_list.aspx.cs">
-      <DependentUpon>order_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\order\order_list.aspx.designer.cs">
-      <DependentUpon>order_list.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\order\user_edit.aspx.cs">
-      <DependentUpon>user_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\order\user_edit.aspx.designer.cs">
-      <DependentUpon>user_edit.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\order\user_list.aspx.cs">
-      <DependentUpon>user_list.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\order\user_list.aspx.designer.cs">
-      <DependentUpon>user_list.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\plugins\link_edit.aspx.cs">
       <DependentUpon>link_edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1645,20 +1590,6 @@
     </Compile>
     <Compile Include="admin\plugins\slidelink_index.aspx.designer.cs">
       <DependentUpon>slidelink_index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\plugins\type_index.aspx.cs">
-      <DependentUpon>type_index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\plugins\type_index.aspx.designer.cs">
-      <DependentUpon>type_index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="admin\plugins\type_edit.aspx.cs">
-      <DependentUpon>type_edit.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\plugins\type_edit.aspx.designer.cs">
-      <DependentUpon>type_edit.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\preview\PreCad.aspx.cs">
       <DependentUpon>PreCad.aspx</DependentUpon>
@@ -1798,9 +1729,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Movie\images\1234.flv" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Files\webuploader_20161203012933.zip" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tools\check.ashx" />

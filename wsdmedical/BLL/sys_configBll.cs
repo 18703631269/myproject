@@ -40,35 +40,5 @@ namespace BLL
             string model = dal.ReadConfig();
             return model;
         }
-
-
-        /// <summary>
-        /// 取得URL配制列表
-        /// </summary>
-        public List<Model.sys_url> GetList(string channel)
-        {
-            List<Model.sys_url> ls = new List<Model.sys_url>();
-            string filePath = Utils.GetXmlMapPath("Urlspath");
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filePath);
-            XmlNode xn = doc.SelectSingleNode("urls");
-            foreach (XmlElement xe in xn.ChildNodes)
-            {
-                if (xe.NodeType != XmlNodeType.Comment && xe.Name.ToLower() == "rewrite")
-                {
-                    Model.sys_url model = new Model.sys_url();
-                    if (xe.Attributes["name"] != null)
-                        model.name = xe.Attributes["name"].Value;
-                    if (xe.Attributes["path"] != null)
-                        model.path = xe.Attributes["path"].Value;
-                    if (xe.Attributes["pattern"] != null)
-                        model.pattern = xe.Attributes["pattern"].Value;
-                    if (xe.Attributes["querystring"] != null)
-                        model.querystring = xe.Attributes["querystring"].Value;
-                    ls.Add(model);
-                }
-            }
-            return ls;
-        }
     }
 }

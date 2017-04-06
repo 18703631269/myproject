@@ -65,9 +65,6 @@
     <Compile Include="replayBll.cs" />
     <Compile Include="slidelinkBll.cs" />
     <Compile Include="sys_configBll.cs" />
-    <Compile Include="typeBll.cs" />
-    <Compile Include="t_userBll.cs" />
-    <Compile Include="dtorderBll.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

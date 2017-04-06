@@ -54,7 +54,6 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="dtcms_upload.cs" />
-    <Compile Include="HttpModule.cs" />
     <Compile Include="ManagePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

@@ -333,6 +333,7 @@ D:\wsdmdeical_svn\wsdmedical\Web\bin\DAL.pdb
 D:\wsdmdeical_svn\wsdmedical\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 D:\wsdmdeical_svn\wsdmedical\Web\obj\Debug\Web.dll
 D:\wsdmdeical_svn\wsdmedical\Web\obj\Debug\Web.pdb
+D:\github控管项目\myproject\wsdmedical\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 D:\github控管项目\myproject\wsdmedical\Web\bin\Web.dll.config
 D:\github控管项目\myproject\wsdmedical\Web\bin\Web.dll
 D:\github控管项目\myproject\wsdmedical\Web\bin\Web.pdb
@@ -354,6 +355,5 @@ D:\github控管项目\myproject\wsdmedical\Web\bin\Common.pdb
 D:\github控管项目\myproject\wsdmedical\Web\bin\Model.pdb
 D:\github控管项目\myproject\wsdmedical\Web\bin\Web.UI.pdb
 D:\github控管项目\myproject\wsdmedical\Web\bin\DAL.pdb
-D:\github控管项目\myproject\wsdmedical\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 D:\github控管项目\myproject\wsdmedical\Web\obj\Debug\Web.dll
 D:\github控管项目\myproject\wsdmedical\Web\obj\Debug\Web.pdb

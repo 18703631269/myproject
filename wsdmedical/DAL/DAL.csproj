@@ -67,9 +67,6 @@
     <Compile Include="replayDal.cs" />
     <Compile Include="slidelinkDal.cs" />
     <Compile Include="sys_configDal.cs" />
-    <Compile Include="typeDal.cs" />
-    <Compile Include="t_userDal.cs" />
-    <Compile Include="dtorderDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

@@ -85,15 +85,6 @@ namespace Web.admin.article
                 div_albums_container.Visible = false;
                 div_attach_container.Visible = false;
                 field_tab_item.Visible = false;
-
-                dlFylx.Visible = false;
-                dlCity.Visible = false;
-                dlHospl.Visible = false;
-                dlZyxlzt.Visible = false;
-                dlPaymoney.Visible = false;
-                dlZslx.Visible = false;
-                dlMdcity.Visible = false;
-                dlSzjc.Visible = false;
             }
             else
             {
@@ -113,46 +104,6 @@ namespace Web.admin.article
                 {
                     field_tab_item.Visible = true;
                 }
-
-                if (chModel.is_fylx == 1)
-                {
-                    dlFylx.Visible = true;
-                }
-                if (chModel.is_city == 1)
-                {
-                    dlCity.Visible = true;
-                }
-                if (chModel.is_hospl == 1)
-                {
-                    dlHospl.Visible = true;
-                }
-                if (chModel.is_zyxlzt == 1)
-                {
-                    dlZyxlzt.Visible = true;
-                }
-                if (chModel.is_paymoney == 1)
-                {
-                    dlPaymoney.Visible = true;
-                }
-                if (chModel.is_zslx == 1)
-                {
-                    dlZslx.Visible = true;
-                }
-                if (chModel.is_mdcity == 1)
-                {
-                    dlMdcity.Visible = true;
-                }
-                if (chModel.is_szjc == 1)
-                {
-                    dlSzjc.Visible = true;
-                }
-                 if (chModel.is_yybzj == 1)
-                {
-                    ddYybzj.Visible = true;
-                }
-                CheckBind();
-                Hsql.Value = " town='city'";
-                BindCity();
             }
         }
 
@@ -182,47 +133,7 @@ namespace Web.admin.article
                 }
             }
         }
-        typeBll tll = new typeBll();
-        private void CheckBind() 
-        {
-           
-            //翻译类别
-            cbFylx.DataSource = tll.GetList(" town='fy'");
-            cbFylx.DataValueField = "tid";
-            cbFylx.DataTextField = "tname";
-            cbFylx.DataBind();
-          
-            //住宿类型
-            ddlZslx.DataSource = tll.GetList(" town='zslb'");
-            ddlZslx.DataValueField = "tid";
-            ddlZslx.DataTextField = "tname";
-            ddlZslx.DataBind();
-            ddlZslx.Items.Insert(0, new ListItem(""));
-           
-        }
-        /// <summary>
-        /// 绑定所在城市
-        /// </summary>
-        protected void BindCity() 
-        {
-            //所在城市
-            cbCity.DataSource = tll.GetList(Hsql.Value);
-            cbCity.DataValueField = "tid";
-            cbCity.DataTextField = "tname";
-            cbCity.DataBind();
-            //目的城市
-            ddlmdcity.DataSource = tll.GetList(Hsql.Value);
-            ddlmdcity.DataValueField = "tid";
-            ddlmdcity.DataTextField = "tname";
-            ddlmdcity.DataBind();
-            ddlmdcity.Items.Insert(0, new ListItem(""));
-            //航空公司
-            ddlSzjc.DataSource = tll.GetList(Hkql.Value);
-            ddlSzjc.DataValueField = "tid";
-            ddlSzjc.DataTextField = "tname";
-            ddlSzjc.DataBind();
-            ddlSzjc.Items.Insert(0, new ListItem(""));
-        }
+      
         #endregion
 
 
@@ -235,7 +146,6 @@ namespace Web.admin.article
             Model.article model = bll.GetModel(_id);
 
             ddlCategoryId.SelectedValue = model.category_id.ToString();
-            ShowCity();
           
             txtTitle.Text = model.title;
             content.Value = model.content;
@@ -272,50 +182,7 @@ namespace Web.admin.article
             txtContent_two.Value = model.details_two;
             txtContent_three.Value = model.details_three;
             txtContent_four.Value = model.detail_title_four;
-            if (model.fylx != null && model.fylx != "")
-            {
-                //翻译类型
-                string[] strFylx = model.fylx.Split(',');
-                for (int i = 0; i < strFylx.Length; i++) 
-                {
-                    for (int j = 0; j < cbFylx.Items.Count; j++) 
-                    {
-                        if (string.Equals(strFylx[i], cbFylx.Items[j].Value)) 
-                        {
-                            cbFylx.Items[j].Selected = true;
-                        }
-                    }
-                }
-            }
-           // txtfylx.Text = model.fylx;
-           // txtcity.Text = model.city;
-
-            if (model.city != null && model.city != "")
-            {
-                //所在城市
-                string[] strCity = model.city.Split(',');
-                for (int i = 0; i < strCity.Length; i++)
-                {
-                    for (int j = 0; j < cbCity.Items.Count; j++)
-                    {
-                        if (string.Equals(strCity[i], cbCity.Items[j].Value))
-                        {
-                            cbCity.Items[j].Selected = true;
-                        }
-                    }
-                }
-            }
-            txthospl.Text = model.hospl;
-            txtzyxlzt.Text = model.zyxlzt;
-            txtpaymoney.Text = model.paymoney;
-            ddlZslx.SelectedValue = model.zslx;
-            ddlmdcity.SelectedValue = model.mdcity;
-          //  txtzslx.Text = model.zslx;
-           // txtmdcity.Text = model.mdcity;
-            ddlSzjc.SelectedValue = model.szjc;//所在机场
-            //txtszjc.Text = model.szjc;
-
-            txtYYbzj.Text =Convert.ToString(model.chjj);//预约保证金
+          
             //绑定图片相册
             if (filename.StartsWith("thumb_"))
             {
@@ -389,43 +256,7 @@ namespace Web.admin.article
             model.detail_title_two = txtlist_two.Text.Trim();
             model.detail_title_three = txtlist_three.Text.Trim();
             model.detail_title_four = txtlist_four.Text.Trim();
-            if (txtYYbzj.Text.Trim().Length > 0)
-            {
-                model.chjj = Convert.ToDouble(txtYYbzj.Text.Trim());
-            }
-            else 
-            {
-                model.chjj = 0;
-            }
            
-            string strfylx = "";
-            for (int i = 0; i < cbFylx.Items.Count; i++)
-            {
-                if (cbFylx.Items[i].Selected == true)
-                {
-                    strfylx += cbFylx.Items[i].Value+",";
-                }
-            }
-            model.fylx = strfylx.TrimEnd(',');
-
-            //所在城市
-            string strcity = "";
-            for (int i = 0; i < cbCity.Items.Count; i++)
-            {
-                if (cbCity.Items[i].Selected == true)
-                {
-                    strcity += cbCity.Items[i].Value + ",";
-                }
-            }
-            model.city = strcity.TrimEnd(',');
-            model.hospl = txthospl.Text.Trim();
-            model.zyxlzt = txtzyxlzt.Text.Trim();
-            model.paymoney = txtpaymoney.Text.Trim();
-            model.zslx = ddlZslx.SelectedValue;
-            model.mdcity =ddlmdcity.SelectedValue;
-            model.szjc = ddlSzjc.SelectedValue; //txtszjc.Text.Trim();
-
-
             if (cbIsHot.Checked == true)
             {
                 model.is_hot = 1;
@@ -525,41 +356,7 @@ namespace Web.admin.article
             model.detail_title_two = txtContent_two.Value.Trim();
             model.detail_title_three = txtContent_three.Value.Trim();
             model.detail_title_four = txtContent_four.Value.Trim();
-
-            string strfylx = "";
-            for (int i = 0; i < cbFylx.Items.Count; i++)
-            {
-                if (cbFylx.Items[i].Selected == true)
-                {
-                    strfylx += cbFylx.Items[i].Value + ",";
-                }
-            }
-            model.fylx = strfylx.TrimEnd(',');
-
-            //所在城市
-            string strcity = "";
-            for (int i = 0; i < cbCity.Items.Count; i++)
-            {
-                if (cbCity.Items[i].Selected == true)
-                {
-                    strcity += cbCity.Items[i].Value + ",";
-                }
-            }
-            model.city = strcity.TrimEnd(',');
-            model.hospl = txthospl.Text.Trim();
-            model.zyxlzt = txtzyxlzt.Text.Trim();
-            model.paymoney = txtpaymoney.Text.Trim();
-            model.zslx = ddlZslx.SelectedValue;
-            model.mdcity = ddlmdcity.SelectedValue;
-            model.szjc = ddlSzjc.SelectedValue; //txtszjc.Text.Trim();
-            if (txtYYbzj.Text.Trim().Length > 0)
-            {
-                model.chjj = Convert.ToDouble(txtYYbzj.Text.Trim());
-            }
-            else
-            {
-                model.chjj = 0;
-            }
+           
 
             if (cbIsHot.Checked == true)
             {
@@ -633,30 +430,5 @@ namespace Web.admin.article
             imgbeginPic.ImageUrl = txtImgUrl.Text;
         }
 
-        /// <summary>
-        /// 所属类别筛选
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void ddlCategoryId_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ShowCity();
-        }
-
-
-        protected void ShowCity() 
-        {
-            sys_configBll sysBll = new sys_configBll();
-            string[] strCity = sysBll.ReadConfig().Split(';');
-            for (int i = 0; i < strCity.Length; i++)
-            {
-                if (ddlCategoryId.SelectedItem.Text.Contains(strCity[i]))
-                {
-                    Hsql.Value = "  town='city' and ctype='" + strCity[i] + "'";
-                    Hkql.Value = " town='hkgs' and ctype='"+strCity[i]+"'";
-                }
-            }
-            BindCity();
-        }
     }
 }

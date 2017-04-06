@@ -4,3 +4,5 @@
 操作时间:2017-04-06 04:06:52页面: category_edit.aspx方法: Page_Load日志: 未将对象引用设置到对象的实例。
 操作时间:2017-04-06 04:07:04页面: category_edit.aspx方法: Page_Load日志: 未将对象引用设置到对象的实例。
 操作时间:2017-04-06 04:09:41页面: category_edit.aspx方法: Page_Load日志: 未将对象引用设置到对象的实例。
+操作时间:2017-04-06 04:28:28页面: type_index.aspx?action=方法: txtPageNum_TextChanged日志: 正在中止线程。
+操作时间:2017-04-06 04:28:32页面: type_index.aspx?action=方法: txtPageNum_TextChanged日志: 正在中止线程。

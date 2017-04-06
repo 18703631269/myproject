@@ -55,7 +55,6 @@
     <Compile Include="article_comment.cs" />
     <Compile Include="channel.cs" />
     <Compile Include="configxml.cs" />
-    <Compile Include="dt_order.cs" />
     <Compile Include="link.cs" />
     <Compile Include="manager.cs" />
     <Compile Include="manager_log.cs" />
@@ -67,9 +66,6 @@
     <Compile Include="reply.cs" />
     <Compile Include="slidelink.cs" />
     <Compile Include="sys_config.cs" />
-    <Compile Include="sys_url.cs" />
-    <Compile Include="type.cs" />
-    <Compile Include="t_user.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
