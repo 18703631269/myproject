@@ -105,6 +105,7 @@ namespace Web.admin.article
             article_categoryBll bll = new article_categoryBll();
             Model.article_category model = bll.GetModel(_id);
             ddlParentId.SelectedValue = model.parent_id.ToString();
+            txtCallIndex.Text = model.call_index;//别名
             txtTitle.Text = model.title;
             txtSortId.Text = model.sort_id.ToString();
         }
@@ -146,6 +147,7 @@ namespace Web.admin.article
                 Model.article_category model = new Model.article_category();
                 article_categoryBll bll = new article_categoryBll();
                 model.channel_id = this.channel_id;
+                model.call_index = txtCallIndex.Text.Trim();
                 model.title = txtTitle.Text.Trim();
                 model.parent_id = int.Parse(ddlParentId.SelectedValue);
                 model.sort_id = int.Parse(txtSortId.Text.Trim());
@@ -174,6 +176,7 @@ namespace Web.admin.article
                 Model.article_category model = bll.GetModel(_id);
                 int parentId = int.Parse(ddlParentId.SelectedValue);
                 model.channel_id = channel_id;
+                model.call_index = txtCallIndex.Text.Trim();
                 model.title = txtTitle.Text.Trim();
                 model.sort_id = int.Parse(txtSortId.Text.Trim());
                 //如果选择的父ID不是自己,则更改

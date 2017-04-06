@@ -130,69 +130,13 @@ namespace DAL
                 strSql.Append(" from dt_manager_log ");
                 strSql.AppendFormat(" where id={0}",id);
                 Model.manager_log model = new Model.manager_log();
-                DataTable _dt = _access.getDataTable(strSql.ToString());
-                if (_dt.Rows.Count > 0)
-                {
-                    return DataRowToModel(_dt.Rows[0]);
-                }
-                else
-                {
-                    return null;
-                }
+                return _access.getSinggleObj<Model.manager_log>(strSql.ToString());
             }
             catch (Exception ex)
             {
                 throw new Exception("--manager_logDal-->GetModel" + ex.Message, ex);
             }
         }
-
-        /// <summary>
-        /// 得到一个对象实体
-        /// </summary>
-        public Model.manager_log DataRowToModel(DataRow row)
-        {
-            try
-            {
-                Model.manager_log model = new Model.manager_log();
-                if (row != null)
-                {
-                    if (row["id"] != null && row["id"].ToString() != "")
-                    {
-                        model.id = int.Parse(row["id"].ToString());
-                    }
-                    if (row["user_id"] != null && row["user_id"].ToString() != "")
-                    {
-                        model.user_id = int.Parse(row["user_id"].ToString());
-                    }
-                    if (row["user_name"] != null)
-                    {
-                        model.user_name = row["user_name"].ToString();
-                    }
-                    if (row["action_type"] != null)
-                    {
-                        model.action_type = row["action_type"].ToString();
-                    }
-                    if (row["remark"] != null)
-                    {
-                        model.remark = row["remark"].ToString();
-                    }
-                    if (row["user_ip"] != null)
-                    {
-                        model.user_ip = row["user_ip"].ToString();
-                    }
-                    if (row["add_time"] != null && row["add_time"].ToString() != "")
-                    {
-                        model.add_time = DateTime.Parse(row["add_time"].ToString());
-                    }
-                }
-                return model;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("--manager_logDal-->DataRowToModel" + ex.Message, ex);
-            }
-        }
-
         ///// <summary>
         ///// 删除7天前的日志数据
         ///// </summary>

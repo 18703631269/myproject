@@ -53,6 +53,13 @@
                 </dd>
             </dl>
             <dl>
+                <dt>调用别名</dt>
+                <dd>
+                    <asp:TextBox ID="txtCallIndex" runat="server" CssClass="input normal" datatype="/^\s*$|^[a-zA-Z0-9\-\_]{2,50}$/" errormsg="请填写正确的别名" sucmsg=" "></asp:TextBox>
+                    <span class="Validform_checktip">类别的调用别名，只允许字母、数字、下划线</span>
+                </dd>
+            </dl>
+            <dl>
                 <dt>类别名称</dt>
                 <dd>
                     <asp:TextBox ID="txtTitle" runat="server" CssClass="input normal" datatype="*1-100" sucmsg=" "></asp:TextBox>

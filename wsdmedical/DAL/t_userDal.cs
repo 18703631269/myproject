@@ -263,73 +263,7 @@ namespace DAL
                 builder.AppendFormat("select top 1 [uids],[urole],[uname],[ulog],[upwd],[utel],[ulxfs],[usex],[udate],[ual],[ubl],[ulock],uemail,uyzm,ustate");
                 builder.AppendFormat(" from T_user ");
                 builder.AppendFormat(" where uids='{0}'", id);
-
-                DataSet set = _access.getDataSet(builder.ToString());
-                if (set.Tables[0].Rows.Count > 0)
-                {
-                    if ((set.Tables[0].Rows[0]["uids"] != null) && (set.Tables[0].Rows[0]["uids"].ToString() != ""))
-                    {
-                        feedback.uids = new Guid(set.Tables[0].Rows[0]["uids"].ToString());
-                    }
-                    if ((set.Tables[0].Rows[0]["urole"] != null) && (set.Tables[0].Rows[0]["urole"].ToString() != ""))
-                    {
-                        feedback.urole = int.Parse(set.Tables[0].Rows[0]["urole"].ToString());
-                    }
-                    if ((set.Tables[0].Rows[0]["uname"] != null) && (set.Tables[0].Rows[0]["uname"].ToString() != ""))
-                    {
-                        feedback.uname = set.Tables[0].Rows[0]["uname"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["ulog"] != null) && (set.Tables[0].Rows[0]["ulog"].ToString() != ""))
-                    {
-                        feedback.ulog = set.Tables[0].Rows[0]["ulog"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["upwd"] != null) && (set.Tables[0].Rows[0]["upwd"].ToString() != ""))
-                    {
-                        feedback.upwd = set.Tables[0].Rows[0]["upwd"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["utel"] != null) && (set.Tables[0].Rows[0]["utel"].ToString() != ""))
-                    {
-                        feedback.utel = set.Tables[0].Rows[0]["utel"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["ulxfs"] != null) && (set.Tables[0].Rows[0]["ulxfs"].ToString() != ""))
-                    {
-                        feedback.ulxfs = set.Tables[0].Rows[0]["ulxfs"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["usex"] != null) && (set.Tables[0].Rows[0]["usex"].ToString() != ""))
-                    {
-                        feedback.usex = set.Tables[0].Rows[0]["usex"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["udate"] != null) && (set.Tables[0].Rows[0]["udate"].ToString() != ""))
-                    {
-                        feedback.udate = DateTime.Parse(set.Tables[0].Rows[0]["udate"].ToString());
-                    }
-                    if ((set.Tables[0].Rows[0]["ual"] != null) && (set.Tables[0].Rows[0]["ual"].ToString() != ""))
-                    {
-                        feedback.ual = set.Tables[0].Rows[0]["ual"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["ubl"] != null) && (set.Tables[0].Rows[0]["ubl"].ToString() != ""))
-                    {
-                        feedback.ubl = set.Tables[0].Rows[0]["ubl"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["ulock"] != null) && (set.Tables[0].Rows[0]["ulock"].ToString() != ""))
-                    {
-                        feedback.ulock = set.Tables[0].Rows[0]["ulock"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["uemail"] != null) && (set.Tables[0].Rows[0]["uemail"].ToString() != ""))
-                    {
-                        feedback.uemail = set.Tables[0].Rows[0]["uemail"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["uyzm"] != null) && (set.Tables[0].Rows[0]["uyzm"].ToString() != ""))
-                    {
-                        feedback.uyzm = set.Tables[0].Rows[0]["uyzm"].ToString();
-                    }
-                    if ((set.Tables[0].Rows[0]["ustate"] != null) && (set.Tables[0].Rows[0]["ustate"].ToString() != ""))
-                    {
-                        feedback.ustate = int.Parse(set.Tables[0].Rows[0]["ustate"].ToString());
-                    }
-                    return feedback;
-                }
-                return null;
+                return _access.getSinggleObj<t_user>(builder.ToString());
             }
             catch (Exception ex)
             {

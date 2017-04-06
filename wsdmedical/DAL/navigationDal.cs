@@ -219,15 +219,7 @@ namespace DAL
                 strSql.AppendFormat(" where id={0}", id);
 
                 Model.navigation model = new Model.navigation();
-                DataSet ds = _access.getDataSet(strSql.ToString());
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    return DataRowToModel(ds.Tables[0].Rows[0]);
-                }
-                else
-                {
-                    return null;
-                }
+                return _access.getSinggleObj<Model.navigation>(strSql.ToString());
             }
             catch (Exception ex)
             {
@@ -332,77 +324,6 @@ namespace DAL
         }
 
         #region 私有方法===============================
-        /// <summary>
-        /// 组合成对象实体
-        /// </summary>
-        private Model.navigation DataRowToModel(DataRow row)
-        {
-            try
-            {
-                Model.navigation model = new Model.navigation();
-                if (row != null)
-                {
-                    if (row["id"] != null && row["id"].ToString() != "")
-                    {
-                        model.id = int.Parse(row["id"].ToString());
-                    }
-                    if (row["parent_id"] != null && row["parent_id"].ToString() != "")
-                    {
-                        model.parent_id = int.Parse(row["parent_id"].ToString());
-                    }
-                    if (row["title"] != null)
-                    {
-                        model.title = row["title"].ToString();
-                    }
-                    if (row["sub_title"] != null)
-                    {
-                        model.sub_title = row["sub_title"].ToString();
-                    }
-                    if (row["icon_url"] != null)
-                    {
-                        model.icon_url = row["icon_url"].ToString();
-                    }
-                    if (row["link_url"] != null)
-                    {
-                        model.link_url = row["link_url"].ToString();
-                    }
-                    if (row["sort_id"] != null && row["sort_id"].ToString() != "")
-                    {
-                        model.sort_id = int.Parse(row["sort_id"].ToString());
-                    }
-                    if (row["is_lock"] != null && row["is_lock"].ToString() != "")
-                    {
-                        model.is_lock = int.Parse(row["is_lock"].ToString());
-                    }
-                    if (row["remark"] != null)
-                    {
-                        model.remark = row["remark"].ToString();
-                    }
-                    if (row["action_type"] != null)
-                    {
-                        model.action_type = row["action_type"].ToString();
-                    }
-                    if (row["is_sys"] != null && row["is_sys"].ToString() != "")
-                    {
-                        model.is_sys = int.Parse(row["is_sys"].ToString());
-                    }
-                    if (row["class_layer"] != null && row["class_layer"] != "")
-                    {
-                        model.class_layer = int.Parse(row["class_layer"].ToString());
-                    }
-                    if (row["name"] != null)
-                    {
-                        model.name = row["name"].ToString();
-                    }
-                }
-                return model;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("--navigationDal-->DataRowToModel" + ex.Message, ex);
-            }
-        }
-
         /// <summary>
         /// 从内存中取得所有下级类别列表（自身迭代）
         /// </summary>

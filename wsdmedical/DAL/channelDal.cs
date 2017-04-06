@@ -77,16 +77,7 @@ namespace DAL
             {
                 StringBuilder strSql = new StringBuilder();
                 strSql.AppendFormat("select top 1 id,name,title,sort_id,is_video,is_albums,is_attach,is_details,is_fylx,is_city,is_hospl,is_zyxlzt,is_paymoney,is_zslx,is_mdcity,is_szjc,is_yybzj from  dt_channel where id={0};", id);
-                Model.channel model = new Model.channel();
-                DataTable _dtobj = _access.getDataTable(strSql.ToString());
-                if (_dtobj.Rows.Count > 0)
-                {
-                    return DataRowToModel(_dtobj.Rows[0]);
-                }
-                else
-                {
-                    return null;
-                }
+                return _access.getSinggleObj<Model.channel>(strSql.ToString());
             }
             catch (Exception ex)
             {
@@ -114,104 +105,6 @@ namespace DAL
             }
         }
 
-
-
-        public Model.channel DataRowToModel(DataRow row)
-        {
-            try
-            {
-                Model.channel model = new Model.channel();
-                if (row != null)
-                {
-                    #region 主表信息======================
-                    if (row["id"] != null && row["id"].ToString() != "")
-                    {
-                        model.id = int.Parse(row["id"].ToString());
-                    }
-                    if (row["name"] != null)
-                    {
-                        model.name = row["name"].ToString();
-                    }
-
-                    if (row["title"] != null)
-                    {
-                        model.title = row["title"].ToString();
-                    }
-
-                    if (row["sort_id"] != null && row["sort_id"].ToString() != "")
-                    {
-                        model.sort_id = int.Parse(row["sort_id"].ToString());
-                    }
-                    if (row["is_video"] != null && row["is_video"].ToString() != "")
-                    {
-                        model.is_video = int.Parse(row["is_video"].ToString());
-                    }
-                    if (row["is_albums"] != null && row["is_albums"].ToString() != "")
-                    {
-                        model.is_albums = int.Parse(row["is_albums"].ToString());
-                    }
-                    if (row["is_attach"] != null && row["is_attach"].ToString() != "")
-                    {
-                        model.is_attach = int.Parse(row["is_attach"].ToString());
-                    }
-                    if (row["is_details"] != null && row["is_details"].ToString() != "")
-                    {
-                        model.is_details = int.Parse(row["is_details"].ToString());
-                    }
-
-                    if (row["is_fylx"] != null && row["is_fylx"].ToString() != "")
-                    {
-                        model.is_fylx = int.Parse(row["is_fylx"].ToString());
-                    }
-
-                    if (row["is_city"] != null && row["is_city"].ToString() != "")
-                    {
-                        model.is_city = int.Parse(row["is_city"].ToString());
-                    }
-
-                    if (row["is_hospl"] != null && row["is_hospl"].ToString() != "")
-                    {
-                        model.is_hospl = int.Parse(row["is_hospl"].ToString());
-                    }
-
-                    if (row["is_zyxlzt"] != null && row["is_zyxlzt"].ToString() != "")
-                    {
-                        model.is_zyxlzt = int.Parse(row["is_zyxlzt"].ToString());
-                    }
-
-                    if (row["is_paymoney"] != null && row["is_paymoney"].ToString() != "")
-                    {
-                        model.is_paymoney = int.Parse(row["is_paymoney"].ToString());
-                    }
-
-                    if (row["is_zslx"] != null && row["is_zslx"].ToString() != "")
-                    {
-                        model.is_zslx = int.Parse(row["is_zslx"].ToString());
-                    }
-
-                    if (row["is_mdcity"] != null && row["is_mdcity"].ToString() != "")
-                    {
-                        model.is_mdcity = int.Parse(row["is_mdcity"].ToString());
-                    }
-
-                    if (row["is_szjc"] != null && row["is_szjc"].ToString() != "")
-                    {
-                        model.is_szjc = int.Parse(row["is_szjc"].ToString());
-                    }
-                    if (row["is_yybzj"] != null && row["is_yybzj"].ToString() != "")
-                    {
-                        model.is_yybzj = int.Parse(row["is_yybzj"].ToString());
-                    }
-
-                    #endregion
-                }
-                return model;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("--channelDal-->DataRowToModel" + ex.Message, ex);
-            }
-        }
         /// <summary>
         /// 修改一列数据
         /// </summary>

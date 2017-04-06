@@ -41,7 +41,7 @@
 </div>
 
 <div class="copy-right">
-  <p>Copyright 2011 武汉安捷思信息科技有限公司 All rights reserved. </p>
+  <p>Copyright 2017 武汉安捷思信息科技有限公司 All rights reserved. </p>
 </div>
 </form>
 </body>

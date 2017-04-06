@@ -212,86 +212,11 @@ namespace DAL
             strSql.AppendFormat("select  top 1 id,channel_id,article_id,user_id,user_name,user_ip,content,is_lock,add_time,is_reply,reply_content,reply_time");
             strSql.AppendFormat(" from dt_article_comment ");
             strSql.AppendFormat(" where id={0}",id);
-            DataTable _dt = _access.getDataTable(strSql.ToString());
-            if (_dt.Rows.Count > 0)
-            {
-                return DataRowToModel(_dt.Rows[0]);
-            }
-            else
-            {
-                return null;
-            }
+            return _access.getSinggleObj<Model.article_comment>(strSql.ToString());
             }
             catch (Exception ex)
             {
                 throw new Exception("--article_commentDal-->GetModel" + ex.Message, ex);
-            }
-        }
-
-        /// <summary>
-        /// 得到一个对象实体
-        /// </summary>
-        public Model.article_comment DataRowToModel(DataRow row)
-        {
-            try
-            {
-            Model.article_comment model = new Model.article_comment();
-            if (row != null)
-            {
-                if (row["id"] != null && row["id"].ToString() != "")
-                {
-                    model.id = int.Parse(row["id"].ToString());
-                }
-                if (row["channel_id"] != null && row["channel_id"].ToString() != "")
-                {
-                    model.channel_id = int.Parse(row["channel_id"].ToString());
-                }
-                if (row["article_id"] != null && row["article_id"].ToString() != "")
-                {
-                    model.article_id = int.Parse(row["article_id"].ToString());
-                }
-                if (row["user_id"] != null && row["user_id"].ToString() != "")
-                {
-                    model.user_id = int.Parse(row["user_id"].ToString());
-                }
-                if (row["user_name"] != null)
-                {
-                    model.user_name = row["user_name"].ToString();
-                }
-                if (row["user_ip"] != null)
-                {
-                    model.user_ip = row["user_ip"].ToString();
-                }
-                if (row["content"] != null)
-                {
-                    model.content = row["content"].ToString();
-                }
-                if (row["is_lock"] != null && row["is_lock"].ToString() != "")
-                {
-                    model.is_lock = int.Parse(row["is_lock"].ToString());
-                }
-                if (row["add_time"] != null && row["add_time"].ToString() != "")
-                {
-                    model.add_time = DateTime.Parse(row["add_time"].ToString());
-                }
-                if (row["is_reply"] != null && row["is_reply"].ToString() != "")
-                {
-                    model.is_reply = int.Parse(row["is_reply"].ToString());
-                }
-                if (row["reply_content"] != null)
-                {
-                    model.reply_content = row["reply_content"].ToString();
-                }
-                if (row["reply_time"] != null && row["reply_time"].ToString() != "")
-                {
-                    model.reply_time = DateTime.Parse(row["reply_time"].ToString());
-                }
-            }
-            return model;
-             }
-            catch (Exception ex)
-            {
-                throw new Exception("--article_commentDal-->DataRowToModel" + ex.Message, ex);
             }
         }
 

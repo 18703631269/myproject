@@ -73,9 +73,9 @@ namespace DAL
             {
                 StringBuilder strSql = new StringBuilder();
                 strSql.AppendFormat("insert into  dt_article_category(");
-                strSql.AppendFormat("channel_id,title,sort_id,parent_id)");
+                strSql.AppendFormat("channel_id,call_index,title,sort_id,parent_id)");
                 strSql.AppendFormat(" values (");
-                strSql.AppendFormat("{0},'{1}',{2},{3})", model.channel_id, model.title, model.sort_id,model.parent_id);
+                strSql.AppendFormat("{0},'{1}','{2}',{3},{4})", model.channel_id,model.call_index, model.title, model.sort_id,model.parent_id);
                 _access.execCommand(strSql.ToString());
                 //取得新插入的ID
                 model.id = GetMaxId();
@@ -136,7 +136,7 @@ namespace DAL
             try
             {
                 StringBuilder strsql = new StringBuilder();
-                strsql.AppendFormat("update  dt_article_category set title='{0}',sort_id={1},parent_id={2} where id={3}",model.title,model.sort_id,model.parent_id,model.id);
+                strsql.AppendFormat("update  dt_article_category set call_index='{0}',title='{1}',sort_id={2},parent_id={3} where id={4}",model.call_index,model.title,model.sort_id,model.parent_id,model.id);
                 int result = _access.execCommand(strsql.ToString());
                 if (result > 0)
                 {
@@ -175,19 +175,10 @@ namespace DAL
             try
             {
                 StringBuilder strSql = new StringBuilder();
-                strSql.AppendFormat("select  top 1 id,channel_id,title,sort_id,parent_id");
+                strSql.AppendFormat("select  top 1 id,channel_id,call_index,title,sort_id,parent_id");
                 strSql.AppendFormat(" from  dt_article_category ");
                 strSql.AppendFormat(" where id={0}", id);
-                Model.article_category model = new Model.article_category();
-                DataSet ds = _access.getDataSet(strSql.ToString());
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    return DataRowToModel(ds.Tables[0].Rows[0]);
-                }
-                else
-                {
-                    return null;
-                }
+                return _access.getSinggleObj<Model.article_category>(strSql.ToString());
             }
             catch (Exception ex)
             {
@@ -353,47 +344,6 @@ namespace DAL
         }
 
         #region 私有方法================================
-        /// <summary>
-        /// 将对象转换为实体
-        /// </summary>
-        public Model.article_category DataRowToModel(DataRow row)
-        {
-            try
-            {
-                Model.article_category model = new Model.article_category();
-                if (row != null)
-                {
-                    if (row["id"] != null && row["id"].ToString() != "")
-                    {
-                        model.id = int.Parse(row["id"].ToString());
-                    }
-                    if (row["channel_id"] != null && row["channel_id"].ToString() != "")
-                    {
-                        model.channel_id = int.Parse(row["channel_id"].ToString());
-                    }
-                    if (row["title"] != null)
-                    {
-                        model.title = row["title"].ToString();
-                    }
-
-                    if (row["sort_id"] != null && row["sort_id"].ToString() != "")
-                    {
-                        model.sort_id = int.Parse(row["sort_id"].ToString());
-                    }
-
-                    if (row["parent_id"] != null && row["parent_id"].ToString() != "")
-                    {
-                        model.parent_id = int.Parse(row["parent_id"].ToString());
-                    }
-                }
-                return model;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("--article_categoryDal-->DataRowToModel" + ex.Message, ex);
-            }
-        }
-
         /// <summary>
         /// 从内存中取得所有下级类别列表（自身迭代）
         /// </summary>

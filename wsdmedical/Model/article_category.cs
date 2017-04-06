@@ -8,6 +8,7 @@ namespace Model
 
         public int channel_id { get; set; }
 
+        public string call_index { get; set; }//别名
         public string title { get; set; }
 
         public int parent_id { get; set; }
@@ -19,6 +20,7 @@ namespace Model
         {
             id = 0;
             channel_id = 0;
+            call_index = string.Empty;
             title = string.Empty;
             sort_id = 0;
             parent_id = 0;

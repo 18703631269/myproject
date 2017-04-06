@@ -106,6 +106,5 @@ D:\github控管项目\myproject\wsdmedical\Common\bin\Debug\NPOI.dll
 D:\github控管项目\myproject\wsdmedical\Common\bin\Debug\NPOI.OOXML.dll
 D:\github控管项目\myproject\wsdmedical\Common\bin\Debug\NPOI.OpenXml4Net.dll
 D:\github控管项目\myproject\wsdmedical\Common\bin\Debug\NPOI.OpenXmlFormats.dll
-D:\github控管项目\myproject\wsdmedical\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 D:\github控管项目\myproject\wsdmedical\Common\obj\Debug\Common.dll
 D:\github控管项目\myproject\wsdmedical\Common\obj\Debug\Common.pdb
