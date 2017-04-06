@@ -1,0 +1,67 @@
+2017-02-14 22:58:02.216 INFO WxPayAPI.NativePay: Native pay mode 2 url is producing...
+2017-02-14 22:58:02.550 INFO WxPayAPI.NativePay: Get native pay mode 2 url : weixin://wxpay/bizpayurl?pr=Pl5D6wG
+2017-02-14 22:58:19.133 INFO WxPayAPI.ResultNotify: Receive data from WeChat : <xml><appid><![CDATA[wx3e358c15c0325ff0]]></appid>
+<attach><![CDATA[895c8388-2737-4dc9-83e0-1a3a7ed7814f]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[100]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1313604501]]></mch_id>
+<nonce_str><![CDATA[b8d6b50798f74ef1b684136badb4e74e]]></nonce_str>
+<openid><![CDATA[ovKl8wSJiB3eCzFZL9LAFWiuuv4Y]]></openid>
+<out_trade_no><![CDATA[131360450120170214225802409]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[A0DC10C87A370528A7799DC331532DB9]]></sign>
+<time_end><![CDATA[20170214225818]]></time_end>
+<total_fee>100</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[4000952001201702149965366708]]></transaction_id>
+</xml>
+2017-02-14 22:58:19.133 INFO WxPayAPI.ResultNotify: Check sign success
+2017-02-14 22:58:19.134 INFO WxPayAPI.ResultNotify: xml toDataWxPayAPI.WxPayData
+2017-02-14 22:58:19.573 INFO WxPayAPI.ResultNotify: 订单支付成功 : <xml><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg><transaction_id><![CDATA[4000952001201702149965366708]]></transaction_id></xml>
+2017-02-14 23:02:39.984 INFO WxPayAPI.NativePay: Native pay mode 2 url is producing...
+2017-02-14 23:02:40.575 INFO WxPayAPI.NativePay: Get native pay mode 2 url : weixin://wxpay/bizpayurl?pr=3zAcddy
+2017-02-14 23:02:50.898 INFO WxPayAPI.ResultNotify: Receive data from WeChat : <xml><appid><![CDATA[wx3e358c15c0325ff0]]></appid>
+<attach><![CDATA[dfe13568-0048-4fff-baee-1b41138a6bef]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[100]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1313604501]]></mch_id>
+<nonce_str><![CDATA[91ad1359876c490fa0c4d3ea6ac59237]]></nonce_str>
+<openid><![CDATA[ovKl8wSJiB3eCzFZL9LAFWiuuv4Y]]></openid>
+<out_trade_no><![CDATA[131360450120170214230239419]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[BAE61EF88F246174FAEA0296E66FDE49]]></sign>
+<time_end><![CDATA[20170214230250]]></time_end>
+<total_fee>100</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[4000952001201702149966763230]]></transaction_id>
+</xml>
+2017-02-14 23:02:50.898 INFO WxPayAPI.ResultNotify: Check sign success
+2017-02-14 23:02:51.392 INFO WxPayAPI.ResultNotify: 订单支付成功 : <xml><attah><![CDATA[dfe13568-0048-4fff-baee-1b41138a6bef]]></attah><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg><transaction_id><![CDATA[4000952001201702149966763230]]></transaction_id></xml>
+2017-02-14 23:05:43.762 INFO WxPayAPI.NativePay: Native pay mode 2 url is producing...
+2017-02-14 23:05:44.221 INFO WxPayAPI.NativePay: Get native pay mode 2 url : weixin://wxpay/bizpayurl?pr=ZnQq5b5
+2017-02-14 23:05:56.241 INFO WxPayAPI.ResultNotify: Receive data from WeChat : <xml><appid><![CDATA[wx3e358c15c0325ff0]]></appid>
+<attach><![CDATA[ebea7538-e1f3-46d4-9631-20a479dc7952]]></attach>
+<bank_type><![CDATA[CFT]]></bank_type>
+<cash_fee><![CDATA[100]]></cash_fee>
+<fee_type><![CDATA[CNY]]></fee_type>
+<is_subscribe><![CDATA[N]]></is_subscribe>
+<mch_id><![CDATA[1313604501]]></mch_id>
+<nonce_str><![CDATA[7f3bb779a38840fb8e5947dde72775e7]]></nonce_str>
+<openid><![CDATA[ovKl8wSJiB3eCzFZL9LAFWiuuv4Y]]></openid>
+<out_trade_no><![CDATA[131360450120170214230543572]]></out_trade_no>
+<result_code><![CDATA[SUCCESS]]></result_code>
+<return_code><![CDATA[SUCCESS]]></return_code>
+<sign><![CDATA[E8DBE6CA926326615A8C1D7A660B76DF]]></sign>
+<time_end><![CDATA[20170214230556]]></time_end>
+<total_fee>100</total_fee>
+<trade_type><![CDATA[NATIVE]]></trade_type>
+<transaction_id><![CDATA[4000952001201702149968638938]]></transaction_id>
+</xml>
+2017-02-14 23:05:56.241 INFO WxPayAPI.ResultNotify: Check sign success
+2017-02-14 23:05:56.716 INFO WxPayAPI.ResultNotify: 订单支付成功 : <xml><attah><![CDATA[ebea7538-e1f3-46d4-9631-20a479dc7952]]></attah><return_code><![CDATA[SUCCESS]]></return_code><return_msg><![CDATA[OK]]></return_msg><transaction_id><![CDATA[4000952001201702149968638938]]></transaction_id></xml>

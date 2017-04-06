@@ -1,0 +1,31 @@
+﻿.clear{clear:both;height:0px;overflow:hidden;}
+ /*tab*/
+.tabList ul li{
+	float:left;
+	background:#fefefe;
+	background:-moz-linear-gradient(top, #fefefe, #ededed);	
+	background:-o-linear-gradient(left top,left bottom, from(#fefefe), to(#ededed));
+	background:-webkit-gradient(linear,left top,left bottom, from(#fefefe), to(#ededed));
+	border:1px solid #ccc;
+	width:100px;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	/*margin-left:1px;*/
+	position:relative;
+	cursor:pointer;
+    color:#686f7f;
+}
+
+ .tabList ul li.tabs-selected{
+	background:none;
+	border-bottom:none;
+}
+
+
+.tabList .tabEdit{ margin-left:10px; line-height:30px;}
+
+.tabList li.cur{
+	border-bottom:none;
+	background:#fff;
+}
