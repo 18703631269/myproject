@@ -88,4 +88,3 @@ D:\github控管项目\myproject\wsdmedical\Model\bin\Debug\Model.dll
 D:\github控管项目\myproject\wsdmedical\Model\bin\Debug\Model.pdb
 D:\github控管项目\myproject\wsdmedical\Model\obj\Debug\Model.dll
 D:\github控管项目\myproject\wsdmedical\Model\obj\Debug\Model.pdb
-D:\github控管项目\myproject\wsdmedical\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
